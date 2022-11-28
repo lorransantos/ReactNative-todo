@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
     height: '25%',
     alignItems: 'center',
     justifyContent: 'flex-end',
+    marginBottom: 30,
   },
   title: {
     fontSize: 55,
@@ -40,6 +41,10 @@ export const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 4
+    borderRadius: 4,
   },
+  addButton: {
+    color: '#ffffff',
+    fontSize: 24,
+  }
 });
