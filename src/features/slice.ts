@@ -9,17 +9,16 @@ const taskSlice = createSlice({
   initialState,
   reducers: {
     addTask: (state, action: PayloadAction<TypeTask>) => {
-      // [...state.task, action.payload];
       state.task.push(action.payload);
     },
 
     finishTask: (state, action: PayloadAction<TypeTask>) => {
       state.task.map((item) => {
-        if (item.nameTask === action.payload.nameTask) {
+        if (item.id === action.payload.id) {
           item.done = !item.done;
         }
       });
-      // console.log(state.task);
+      console.log(action.payload);
     },
 
     tasksDone: (state, action: PayloadAction<TypeTask>) => {
@@ -30,14 +29,24 @@ const taskSlice = createSlice({
         }
       });
     },
+
+    deleteTask: (state, action: PayloadAction<TypeTask>) => {
+      state.task.map((item, index) => {
+        if (item.id === action.payload.id) {
+          state.task.splice(index, 1);
+          return state.task;
+        }
+      });
+    },
   },
 });
 
 export default taskSlice.reducer;
 
-export const { addTask, finishTask, tasksDone } = taskSlice.actions;
+export const { addTask, finishTask, tasksDone, deleteTask } = taskSlice.actions;
 
 export type TypeTask = {
+  id: number;
   nameTask: string;
   done: boolean;
 };

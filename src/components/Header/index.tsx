@@ -10,10 +10,9 @@ export default function Header() {
   const [value, setValue] = React.useState<string>('');
   const dispatch = useDispatch();
   const { task } = useSelector((state: RootState) => state.task);
-  // console.log(task)
 
   const handleAddTask = () => {
-    dispatch(addTask({ nameTask: value, done: false }));
+    dispatch(addTask({ id: Date.now(), nameTask: value, done: false }));
     setValue('');
   };
 

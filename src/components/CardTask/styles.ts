@@ -7,6 +7,7 @@ export const styles = StyleSheet.create({
   card: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
     width: '90%',
     minHeight: 60,
     backgroundColor: '#262626',
@@ -17,6 +18,12 @@ export const styles = StyleSheet.create({
   },
   confirm: {
     width: 30,
+    justifyContent: 'center',
+  },
+  textTask: {
+    flexDirection: 'row',
+    flex: 2,
+    marginRight: 40,
   },
   task: {
     marginLeft: 8,
@@ -28,5 +35,8 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: '#808080',
     textDecorationLine: 'line-through',
+  },
+  trash: {
+    flex: 1,
   },
 });

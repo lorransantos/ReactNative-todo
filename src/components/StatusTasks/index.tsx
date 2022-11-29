@@ -22,7 +22,6 @@ export default function StatusTasks() {
     }
   });
 
-  // console.log(task);
   return (
     <View style={styles.container}>
       <Text style={styles.tasks}>Tarefas {tasks.length}</Text>

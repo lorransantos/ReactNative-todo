@@ -22,6 +22,7 @@ export default function Home() {
         data={task}
         renderItem={({ item }) => (
           <Card
+            id={item.id}
             nameTask={item.nameTask}
             done={item.done}
           />
